@@ -1,0 +1,63 @@
+/*------------------------------------*\
+    #TABLE OF CONTENTS
+\*------------------------------------*/
+/**
+ * ABSTRACTS..............................Declarations of Sass variables & mixins
+ * BASE...................................Default element styles
+ * LAYOUT.................................Layout-specific styles
+ * COMPONENTS.............................Component styles
+ * UTILITIES..............................Utility classes
+ */
+
+/*------------------------------------*\
+    #ABSTRACTS
+\*------------------------------------*/
+@import "scss/abstracts/variables";
+@import "scss/abstracts/mixins";
+@import "scss/abstracts/colors";
+
+/*------------------------------------*\
+    #BASE
+\*------------------------------------*/
+@import "scss/base/reset";
+@import "scss/base/body";
+@import "scss/base/links";
+@import "scss/base/lists";
+@import "scss/base/headings";
+@import "scss/base/forms";
+@import "scss/base/buttons";
+@import "scss/base/main";
+@import "scss/base/media";
+@import "scss/base/text";
+@import "scss/base/table";
+
+/*------------------------------------*\
+    #LAYOUT
+\*------------------------------------*/
+@import "scss/layout/layout";
+
+/*------------------------------------*\
+    #UTILITIES
+\*------------------------------------*/
+@import "scss/utilities/visibility";
+@import "scss/utilities/spacing";
+
+/*------------------------------------*\
+    #COMPONENTS
+\*------------------------------------*/
+@import "../_patterns/00-atoms/images/icon";
+@import "../_patterns/01-molecules/blocks/card";
+@import "../_patterns/01-molecules/buttons/button";
+@import "../_patterns/01-molecules/forms/field";
+@import "../_patterns/01-molecules/global/logo";
+@import "../_patterns/01-molecules/layout/grid";
+@import "../_patterns/01-molecules/layout/layout-container";
+@import "../_patterns/01-molecules/navigation/footer-nav";
+@import "../_patterns/01-molecules/navigation/primary-nav";
+@import "../_patterns/01-molecules/text/page-header";
+@import "../_patterns/02-organisms/global/footer";
+@import "../_patterns/02-organisms/global/header";
+@import "../_patterns/02-organisms/lists/card-list";
+@import "../_patterns/02-organisms/sections/section";
+@import "../_patterns/02-organisms/tables/table";
+@import "../_patterns/02-organisms/text/text-passage";

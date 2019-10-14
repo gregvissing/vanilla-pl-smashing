@@ -1,0 +1,42 @@
+{
+	"name": "pattern-lab",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"pl:build": "patternlab build --config ./patternlab-config.json",
+		"pl:help": "patternlab --help",
+		"pl:install": "patternlab install --config ./patternlab-config.json",
+		"pl:serve": "patternlab serve --config ./patternlab-config.json",
+		"pl:version": "patternlab --version",
+		"plop": "plop component"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@pattern-lab/cli": "^1.0.2",
+		"@pattern-lab/core": "^3.0.4",
+		"@pattern-lab/engine-handlebars": "^2.0.2",
+		"@pattern-lab/starterkit-handlebars-vanilla": "^1.1.0",
+		"@pattern-lab/uikit-workshop": "^1.0.5",
+		"gulp": "^4.0.2",
+		"gulp-autoprefixer": "^7.0.1",
+		"gulp-copy": "^4.0.1",
+		"gulp-livereload": "^4.0.2",
+		"gulp-run": "^1.7.1",
+		"gulp-sass": "^4.0.2",
+		"gulp-sass-glob": "^1.1.0",
+		"scsstojson": "^1.0.2"
+	},
+	"browserslist": [
+		">0.2%",
+		"not dead",
+		"not ie <= 11",
+		"not op_mini all"
+	],
+	"devDependencies": {
+		"plop": "^2.4.0"
+	}
+}
