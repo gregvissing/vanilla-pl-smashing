@@ -6,23 +6,43 @@
  *
  * 1) Button or link that has functionality to it
  */
-.c-btn {
-	display: inline-block;
-	border: $border-width solid $color-btn-primary-border;
-	border-radius: $border-radius;
-	background: $color-neutral-gray-93;
-	color: $color-neutral-white;
-	line-height: 1;
-	font-weight: bold;
-	padding: 1rem 2rem;
-	border: 0;
-	text-align: center;
-	transition: all $anim-fade-quick $anim-ease;
+// .c-btn {
+// 	display: inline-block;
+// 	border: $border-width solid $color-btn-primary-border;
+// 	border-radius: $border-radius;
+// 	background: $color-neutral-gray-93;
+// 	color: $color-neutral-white;
+// 	line-height: 1;
+// 	font-weight: bold;
+// 	padding: 1rem 2rem;
+// 	border: 0;
+// 	text-align: center;
+// 	transition: all $anim-fade-quick $anim-ease;
 
-	&:hover,
-	&:focus {
-		background: $color-btn-primary-bg-hover;
-	}
+// 	&:hover,
+// 	&:focus {
+// 		background: $color-btn-primary-bg-hover;
+// 	}
+// }
+
+.c-btn {
+  font-family: $font-family-secondary;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: $border-width solid $color-btn-primary-border;
+  background: $color-neutral-black;
+  color: $color-neutral-white;
+  line-height: 1;
+  padding: 1rem 2rem;
+  border: 0;
+  text-align: center;
+  transition: all $anim-fade-quick $anim-ease;
+
+  &:hover,
+  &:focus {
+    background: $color-btn-primary-bg-hover;
+  }
 }
 
 /*
