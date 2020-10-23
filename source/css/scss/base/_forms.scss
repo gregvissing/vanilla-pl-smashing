@@ -129,3 +129,337 @@ select {
 		border-color: $color-form-border-focus;
 	}
 }
+
+/**
+ * Checkbox
+ * Reference: https: //github.com/scottaohara/a11y_styled_form_controls
+ */
+
+.c-input-group input[type="checkbox"] {
+	-moz-appearance: none;
+	-o-apperance: none;
+	-webkit-appearance: none;
+	background: none;
+	/* ios */
+	border-radius: 4px;
+	border: 2px solid #666;
+	font-size: inherit;
+	height: 2em;
+	line-height: 1;
+	margin: .5em 0 0 0;
+	position: relative;
+	vertical-align: bottom;
+	width: 2em;
+}
+
+.c-input-group input[type="checkbox"]:before,
+.c-input-group input[type="checkbox"]:after {
+	content: "";
+	position: absolute;
+	transition: transform .2s ease-in-out;
+}
+
+.c-input-group input[type="checkbox"]:before,
+.c-input-group input[type="checkbox"]:after {
+	border-bottom: 3px solid rgba(34, 139, 236, 1);
+	border-right: 3px solid rgba(34, 139, 236, 1);
+	bottom: 0;
+	height: 1em;
+	margin: auto;
+	right: .5em;
+	top: -.5em;
+	transform: rotate(45deg) scale(0);
+	width: .625em;
+}
+
+.c-input-group input[type="checkbox"]:checked {
+	border-color: #0d5192;
+	box-shadow: inset 0 0 20px 3px rgba(34, 139, 236, .05);
+}
+
+.c-input-group input[type="checkbox"]:checked:before {
+	transform: rotate(45deg) scale(1);
+}
+
+.c-input-group input[type="checkbox"]:focus {
+	box-shadow: 0 0 0 1px rgba(34, 139, 236, 1);
+	border: 2px solid rgba(34, 139, 236, 1);
+	outline: 1px dotted rgba(34, 139, 236, 1);
+	outline-offset: 3px;
+}
+
+/**
+ * Disabled styles
+ */
+.c-input-group input[type="checkbox"][disabled] {
+	opacity: .45
+}
+
+.c-input-group input[type="checkbox"][disabled]+label {
+	opacity: .75;
+}
+
+
+/* close the whitespace gap between the input and the label
+   allow for a required visual indicator to be absolutely positioned
+*/
+.c-input-group label {
+	position: relative;
+	left: -.25em;
+	padding-left: .75em;
+}
+
+/* if a checkbox is required, make some space for the
+   CSS generated visual indicator. */
+.c-input-group input[type="checkbox"][required]+label {
+	padding-right: 1em;
+}
+
+
+/**
+ * Styling for invalid (aka unchecked required checkbox)
+ */
+.c-input-group input[type="checkbox"]:invalid {
+	box-shadow: 0 0 0 1px rgba(20, 20, 20, 1);
+	border: 2px solid rgba(20, 20, 20, 1);
+}
+
+.c-input-group input[type="checkbox"]:invalid:focus {
+	box-shadow: 0 0 0 1px rgba(220, 20, 20, 1);
+	border-color: rgba(220, 20, 20, 1);
+}
+
+
+/**
+ * Create a visual indicator for the required checkbox
+ */
+.c-input-group input[type="checkbox"][required]+label:after,
+.c-input-group input[type="checkbox"][required]+label:before {
+	border-left: .35em solid transparent;
+	border-right: .35em solid transparent;
+	content: " ";
+	position: absolute;
+	right: 0;
+}
+
+.c-input-group input[type="checkbox"][required]+label:after {
+	border-bottom: .6em solid red;
+	top: -.2em;
+}
+
+.c-input-group input[type="checkbox"][required]+label:before {
+	border-top: .6em solid red;
+	top: 0
+}
+
+/* when checked, ease up on the "error" feel to the indicator */
+.c-input-group input[type="checkbox"][required]:checked+label:after {
+	border-bottom-color: rgba(34, 139, 236, .8);
+}
+
+.c-input-group input[type="checkbox"][required]:checked+label:before {
+	border-top-color: rgba(34, 139, 236, .8);
+}
+
+
+
+/**
+ * IE11 / Edge
+ *
+ * Note that -ms-check will apply to radio button
+ * styles as well.
+ */
+.c-input-group input[type="checkbox"]::-ms-check {
+	border-color: rgba(34, 139, 236, 1);
+	color: rgba(34, 139, 236, 1);
+}
+
+/*
+ * Radio button
+ * Reference: https: //github.com/scottaohara/a11y_styled_form_controls
+ */
+
+.c-input-group {
+	display: inline-block;
+	padding: .5em 0;
+}
+
+.c-input-group {
+	input[type="radio"] {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		/* in case this ever gets supported */
+		background: #fff;
+		border-radius: 100%;
+		border: 1px solid transparent;
+		box-shadow:
+			0 0 0 2px rgba(13, 81, 146, 1),
+			inset 0 0 0 0px rgba(13, 81, 146, 0);
+		display: inline-block;
+		height: 1.25em;
+		margin-right: .25em;
+		transition:
+			border-color .2s ease-in-out,
+			box-shadow .2s ease-in-out;
+		vertical-align: text-bottom;
+		width: 1.25em;
+
+		&:focus {
+			border-color: transparent;
+			box-shadow:
+				0 0 0 2px rgba(13, 81, 146, 1),
+				inset 0 0 0 0px rgba(13, 81, 146, 1);
+		}
+
+		&:checked {
+			border-color: #fff;
+			box-shadow:
+				0 0 0 2px rgba(34, 139, 236, 1),
+				inset 0 0 0 6px rgba(13, 81, 146, 1);
+
+			&:focus {
+				box-shadow:
+					0 0 0 3px rgba(34, 139, 236, 1),
+					inset 0 0 0 3px rgba(13, 81, 146, 1);
+			}
+		}
+
+		@media screen and (-ms-high-contrast: active) {
+			&:checked {
+				border: 6px solid;
+				box-shadow: none;
+			}
+		}
+
+		&[disabled],
+		&[disabled]+span {
+			opacity: .4;
+		}
+	}
+}
+
+/*
+ * Search component
+ * Reference: https: //github.com/scottaohara/a11y_styled_form_controls
+ */
+/**
+ * 1. Remove webkit redesign of searches
+ *
+ * 2. Remove inner padding & search cancel button in Safari & Chrome on
+ *    OS X. Safari (but not Chrome) clips the cancel button when the
+ *    search input has padding (& `textfield` appearance).
+ */
+
+input[type="search"] {
+	-webkit-appearance: none;
+	/* 1 */
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	/* 2 */
+	appearance: none;
+}
+
+/**
+ * Component Specific Styling
+ */
+.c-search-form__body {
+	border: 1px solid #565656;
+	display: block;
+	padding-right: 2.5em;
+	position: relative;
+}
+
+.c-search-form__body svg {
+	display: block;
+}
+
+.c-search-form__body>input[type="search"],
+.c-search-form__body>input[type="text"] {
+	border: 0;
+	border-right: 1px solid #565656;
+	padding: .5em;
+	width: 100%;
+}
+
+.c-search-form__body>[type="submit"] {
+	background: #eee;
+	border: 0;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 2.5em;
+}
+
+.c-search-form__body>input[type="search"]:focus,
+.c-search-form__body>input[type="text"]:focus,
+.c-search-form__body>[type="submit"]:not([disabled]):hover,
+.c-search-form__body>[type="submit"]:focus {
+	box-shadow: inset 0 0 0 1px #4184F3;
+	outline: 1px solid #4184F3;
+	outline-offset: 0;
+}
+
+.c-search-form__body>input[type="search"]:focus,
+.c-search-form__body>input[type="text"]:focus {
+	border-right-color: #4184F3;
+}
+
+.c-search-form__body>[type="submit"]:not([disabled]):hover,
+.c-search-form__body>[type="submit"]:focus {
+	background: #4184F3;
+}
+
+.c-search-form__body>[type="submit"]:focus svg,
+.c-search-form__body>[type="submit"]:not([disabled]):hover svg {
+	fill: #fff;
+}
+
+/**
+ * Disabled
+ */
+.c-search-form__body>[type="search"][disabled],
+.c-search-form__body>[type="text"][disabled],
+.c-search-form__body>[type="submit"][disabled] {
+	background: #fafafa;
+	cursor: not-allowed;
+	opacity: .5;
+}
+
+
+@media screen and (-ms-high-contrast: active) {
+	.c-search-form__body {
+		border: none;
+	}
+
+	.c-search-form__body>input[type="search"],
+	.c-search-form__body>input[type="text"] {
+		border: 1px solid;
+		border-right: 1px solid;
+		position: relative;
+	}
+
+	.c-search-form__body>[type="submit"],
+	.c-search-form__body>input[type="search"]:focus,
+	.c-search-form__body>input[type="text"]:focus {
+		z-index: 4;
+	}
+
+	.c-search-form__body>[type="submit"]:focus {
+		border: 1px solid;
+	}
+
+	.c-search-form__body svg {
+		fill: #fff;
+	}
+
+	.c-search-form__body>[type="search"][disabled],
+	.c-search-form__body>[type="text"][disabled],
+	.c-search-form__body>[type="submit"][disabled] {
+		opacity: .5;
+	}
+}
